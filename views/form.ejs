@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Submit Form</title>
+</head>
+<body>
+    <form class="flex flex-wrap w-full justify-center px-96" method="POST" action="/new">
+        <h1 class="text-[40px] flex-initial w-60 text-center">Submit form</h1>
+        <label class="flex-initial w-60" for="username">Username</label>
+        <input class="flex-initial w-60 border-solid border-2 border-black rounded-md" type="text" name="username" required data-username-input>
+        <label class="flex-initial w-60" for="message">Message</label>
+        <input class="flex-initial w-60 border-solid border-2 border-black rounded-md" type="text" name="message" required data-message>
+        <button class="flex-initial w-60 bg-slate-400 mt-4 rounded-md" type="submit">Submit</button>
+    </form>
+</body>
+</html>
