@@ -1,9 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
+const messages = [
+  {
+    user: "Amando",
+    text: "Hi there!",
+    added: new Date()
+  },
+  {
+    user: "Charles",
+    text: "Hello World!",
+    added: new Date()
+  }
+];
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { message_obj: messages });
 });
 
 module.exports = router;
