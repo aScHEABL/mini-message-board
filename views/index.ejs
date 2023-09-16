@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mini Message Board</title>
+    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <div>
-      <% message_obj.forEach((item) => { %>
-        <h2><%= item.user %></h2>
-        <h3><%= item.text %></h3>
-        <p><%= item.added %></p>
-      <%  }) %>
-    </div>
+    <h1><%= title %></h1>
+    <% messages.forEach((item) => { %>
+      <h2><%= item.user %></h2>
+      <p><%= item.text %></p>
+      <label><%= item.added %></label>
+    <% }) %>
+    <br>
+    <input type="button" onclick="location.href='/new';" value="Post a message" />
   </body>
 </html>

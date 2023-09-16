@@ -12,11 +12,23 @@ const messages = [
     text: "Hello World!",
     added: new Date()
   }
-];
+]
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { message_obj: messages });
-});
+router.get('/', (req, res, next) => {
+  res.render('index', { title: 'Message Board', messages });
+})
+
+router.get("/new", function(req, res, next) {
+  res.render("form")
+})
+
+router.post("/new", (req, res, next) => {
+  const messageText = req.body.text;
+  const messageUser = req.body.user;
+  messages.push({ user: messageText, text: messageText, added: new Date() });
+  res.redirect("/")
+})
 
 module.exports = router;
